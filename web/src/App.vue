@@ -1,35 +1,27 @@
 <template>
-  <div>
-   <div>Bot 昵称：{{ bot_name }}</div>
-   <div>Bot 战力：{{ bot_rating }}</div>
-  </div>
+  <NavBar></NavBar>
+  <!-- <div>
+   <div>Bot 昵称：</div>
+   <div>Bot 战力：</div>
+  </div> -->
   <router-view/>
 </template>
 <script>
-import $ from "jquery";
-import {ref} from "vue";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap";
+// import $ from "jquery";
+// import {ref} from "vue";
+import NavBar from './components/NavBar.vue';
 export default{
   name:"App",
-  setup:() => {
-    let bot_name =  ref("");
-    let bot_rating = ref("");
-
-    $.ajax({
-      url: "http://127.0.0.1:3000/pk/getbotinfo/",
-      type: "get",
-      success:resp =>{
-        bot_name.value = resp.name;
-        bot_rating.value = resp.rating;
-      }
-    });
-
-    return{
-      bot_name,
-      bot_rating
-    }
+  components:{
+    NavBar,
   }
 }
 </script>
-<style>
+<style >
+body{
+  background-image: url("./assets/image/bg.jpg");
+  background-size: cover;
+}
 </style>
