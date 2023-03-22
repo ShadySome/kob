@@ -25,13 +25,13 @@ export class Snake extends GameObject{
 
         this.eye_direction = 0;
         if(this.id === 1) this.eye_direction = 2;//左下角蛇头朝上，右上角蛇头朝下
-        this.eye_dx = [
+        this.eye_dx = [ //眼睛相对于蛇头圆心的x的偏移量
             [-1,1],
             [1,1],
             [1,-1],
             [-1,-1],
         ];
-        this.eye_dy = [
+        this.eye_dy = [ //眼睛相对于蛇头圆心的y的偏移量
             [-1,-1],
             [-1,1],
             [1,1],
