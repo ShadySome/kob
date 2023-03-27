@@ -57,7 +57,7 @@ public class AddBotServiceImpl implements AddBotService {
         Date now = new Date();
         Bot bot = new Bot(null,user.getId(),title,description,content,1500,now,now);
         botMapper.insert(bot);
-        map.put("error_message" ,"插入成功");
+        map.put("error_message" ,"success");
         return map;
     }
 }
