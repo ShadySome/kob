@@ -1,7 +1,7 @@
 <template>
     <div class="result-board">
         <div class="result-board-text" v-if="$store.state.pk.loser === 'all'">
-            All lose...
+            Draw
         </div>
         <div class="result-board-text" v-else-if="$store.state.pk.loser === 'A' && $store.state.pk.a_id == parseInt($store.state.user.id)">
             Lose...
