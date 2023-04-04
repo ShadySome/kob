@@ -41,7 +41,11 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/user/account/token/", "/user/account/register/","/pk/start/game/").permitAll()
+                .requestMatchers(
+                        "/user/account/token/",
+                        "/user/account/register/",
+                        "/pk/start/game/",
+                        "/pk/receive/bot/move/").permitAll()
                 .requestMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest().authenticated();
 

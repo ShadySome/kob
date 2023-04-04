@@ -52,7 +52,10 @@ export class GameMap extends GameObject{
     create_walls()
     {
         const g = this.store.state.pk.gamemap;
-
+        if(g === null){
+            this.store.state.pk.status = "matching";
+            return;
+        }
         for(let r = 0; r < this.rows; r ++)
         {
             for(let c = 0; c < this.cols; c ++)

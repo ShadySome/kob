@@ -48,6 +48,7 @@ export default{
                         store.commit("updateStatus","playing");
                     },200);
                     store.commit("updateGameMap",data.game);
+                    console.log(data.game);
                 }
                 else if(data.event === "move")
                 {
